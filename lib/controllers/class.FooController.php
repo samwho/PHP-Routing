@@ -13,5 +13,4 @@ class FooController {
         return $return;
     }
 }
-?>
 

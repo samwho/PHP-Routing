@@ -1,8 +1,8 @@
 <?php
 // Include the Router class and a sample Controller to use.
-require_once dirname(__FILE__) . '/lib/model/class.Router.php';
-require_once dirname(__FILE__) . '/lib/controller/class.FooController.php';
-require_once dirname(__FILE__) . '/lib/controller/class.NotFoundController.php';
+require_once dirname(__FILE__) . '/lib/models/class.Router.php';
+require_once dirname(__FILE__) . '/lib/controllers/class.FooController.php';
+require_once dirname(__FILE__) . '/lib/controllers/class.NotFoundController.php';
 
 // Get the singleton instance of the Router class.
 $router = Router::getInstance();
@@ -82,5 +82,4 @@ catch (Exception $e) {
     // are the same, an exception will be thrown.
     echo $e->getMessage();
 }
-?>
 

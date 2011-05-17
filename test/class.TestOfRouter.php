@@ -93,6 +93,28 @@ class TestOfRouter extends UnitTestCase {
         $this->assertPattern('/action: new/', $this->router->execute(true));
         $this->assertPattern('/extra param: just for fun/', $this->router->execute(true));
     }
+
+    function testControllerDoesntExist() {
+        $this->expectException(new Exception("Class 'DefinitelyDoesntExist' does not exist."));
+        $this->router->setRequestUri('/foo');
+        $this->router->map('/foo', 'DefinitelyDoesntExist');
+
+        $this->router->execute();
+    }
+
+    function testActionDoesntExist() {
+        $this->expectException(new Exception("Method 'fakeaction' not found in class 'FooController'."));
+        $this->router->setRequestUri('/foo');
+        $this->router->map('/foo', 'FooController', 'fakeaction');
+
+        $this->router->execute();
+    }
+
+    function testDuplicateMappings() {
+        $this->expectException(new Exception("Tried to overwrite an existing URL mapping rule: '/:bar/:stool' has the same matching regex as '/:foo/:bar'."));
+        $this->router->map('/:foo/:bar');
+        $this->router->map('/:bar/:stool');
+    }
 }
 
 ?>
