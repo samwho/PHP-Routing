@@ -26,7 +26,7 @@ try {
     //
     // This will map the URL /foo to the default action of the
     // FooController. The default action is "index" but you can
-    // chance this with a call to $router->setDefaultAction($action).
+    // change this with a call to $router->setDefaultAction($action).
     $router->map('/foo', 'FooController');
 
     // This will map to the default controller defined in the source
@@ -50,7 +50,7 @@ try {
     // some extra things in the $_GET array you can pass an array as the fourth
     // argument.
     //
-    // Example: /just/testing will make the $_GET array look like this:
+    // Example: /just/testing/extraparam will make the $_GET array look like this:
     //
     // array('parameter1' => 'just', 'parameter2' => 'testing',
     //     'optional' => 'param');
@@ -58,7 +58,7 @@ try {
         array('optional' => 'param'));
 
     // Finally, there is a fifth parameter that you can pass that will create
-    // custom, regular expression mappings for specific parameters.
+    // custom regular expression mappings for specific parameters.
     //
     // This example is telling the mapping to only match numbers for the :id
     // parameter.
