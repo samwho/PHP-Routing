@@ -31,7 +31,7 @@ class Route {
      * E.g. if you have this rule: "/user/:id" you could send the conditions parameter
      * this array: "array('id' => '[0-9]+')" to tell it to only match numbers.
      */
-    public function __construct($url, $request_uri, $controller, $action, $params = array(), $conditions = array()) {
+    public function __construct($url, &$request_uri, $controller, $action, $params = array(), $conditions = array()) {
         $this->url = $url;
         $this->additional_params = $params;
         $this->conditions = $conditions;
