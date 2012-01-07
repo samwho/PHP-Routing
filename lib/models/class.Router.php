@@ -199,7 +199,7 @@ class Router {
         if ($controller == null) $controller = $this->default_controller;
         if ($action == null) $action = $this->default_action;
 
-        $new_route = new Route($rule, &$this->request_uri, $controller, $action, $params, $conditions);
+        $new_route = new Route($rule, $this->request_uri, $controller, $action, $params, $conditions);
 
         // Make sure that the new route does not match any of the current matching rules.
         foreach ($this->routes as $route) {
