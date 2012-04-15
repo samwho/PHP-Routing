@@ -25,3 +25,9 @@ The project uses the SimpleTest library for PHP Unit Testing. This is
 included with the source but you will not need it for normal use. You
 will only need it if you wish to fork this repository and contribute
 code.
+
+# Contributing
+
+This project uses the [git-flow](https://github.com/nvie/gitflow) workflow. If
+you want to contribute, fork the repository, create a feature branch, when
+you're done issue a pull request to origin/develop :)
